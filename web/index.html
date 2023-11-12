@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div id="sidebar">
+    <nav>
+        <ul>
+            <li><a href="#">Graph</a></li>
+            <li>
+                Functions
+                <ul>
+                    <li><a href="#">MyFunction1</a></li>
+                    <li><a href="#">MyFunction2</a></li>
+                    <li><a href="#">MyFunction3</a></li>
+                </ul>
+            </li>
+            <li>
+                Macros
+                <ul>
+                    <li><a href="#">MyMacro1</a></li>
+                    <li><a href="#">MyMacro2</a></li>
+                    <li><a href="#">MyMacro3</a></li>
+                </ul>
+            </li>
+            <li>
+                Variables
+                <ul>
+                    <li><a href="#">MyVariable1</a></li>
+                    <li><a href="#">MyVariable2</a></li>
+                    <li><a href="#">MyVariable3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="properties">
+        <h5>Properties</h5>
+        <ul>
+            <li><a href="#">MyProperty1</a></li>
+            <li><a href="#">MyProperty2</a></li>
+            <li><a href="#">MyProperty3</a></li>
+        </ul>
+    </div>
+</div>
+<div id="content">
+    <div class="cls"></div>
+    <div id="tabs"></div>
+    <div class="graph" id="tab-content-1">
+
+        <svg id="connections" width="100%" height="100%" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></svg>
+    </div>
+
+    <div id="quick-menu">
+        <a href="#" id="upload-graph">Upload to server</a>
+    </div>
+</div>
+<div id="context-menu"></div>
+<div id="templates">
+    <div id="node-template" class="block">
+        <div class="title">
+            <h5>Node</h5>
+            <div class="description-tooltip"></div>
+        </div>
+        <div class="body">
+            <div class="left-pins"></div>
+            <div class="right-pins"></div>
+        </div>
+    </div>
+
+    <div id="input-pin-template" class="pin">
+        <span class="pin-indicator"></span>
+        <span class="pin-title">Loop body</span>
+        <input type="text" class="data-input" value="" />
+
+        <div class="description-tooltip">
+            <div class="type">Type: <span></span></div>
+        </div>
+    </div>
+
+    <div id="output-pin-template" class="pin">
+        <span class="pin-title">Loop body</span>
+        <span class="pin-indicator"></span>
+
+        <div class="description-tooltip">
+            <div class="type">Type: <span></span></div>
+        </div>
+    </div>
+</div>
+<script type="module">
+    import {Editor, Graph} from "./js/graph/index.js";
+
+    const editor = new Editor();
+    const graph = new Graph(editor, document.getElementById("tab-content-1"));
+</script>
+</body>
+</html>
